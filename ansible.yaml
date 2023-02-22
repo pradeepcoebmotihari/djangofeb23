@@ -13,7 +13,7 @@
     - name: copy python   
       copy:
         src: requirements.txt
-        dest: /var/www/html/django
+        dest: /var/www/html/
     - name: Install specified python requirements in indicated (virtualenv)
       pip:
         requirements: /var/www/html/requirements.txt
