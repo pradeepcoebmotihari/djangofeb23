@@ -1,5 +1,5 @@
 ---
-- hosts: server
+- hosts: pradeep
   user: don
   become: yes
   connection: ssh
