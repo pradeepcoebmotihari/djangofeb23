@@ -1,0 +1,14 @@
+---
+- hosts: server
+  user: don
+  become: yes
+  connection: ssh
+  tasks:
+    - name: copy
+      copy:
+        src: project/
+        dest: /var/www/html/django/project
+        mode: 0644 
+    - name: restart the apaceh
+      shell:
+        "/usr/local/apache2/bin/apachectl restart"
