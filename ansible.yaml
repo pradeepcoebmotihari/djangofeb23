@@ -10,6 +10,14 @@
         dest: /var/www/html/django/project
         mode: 0644 
         backup: yes
+    - name: copy python   
+      copy:
+        src: requirements.txt
+        dest: /var/www/html/django
+    - name: Install specified python requirements in indicated (virtualenv)
+      pip:
+        requirements: /var/www/html/requirements.txt
+        virtualenv: /var/www/html/django/.py3env
     - name: restart the apaceh
       shell:
         "/usr/local/apache2/bin/apachectl restart"
